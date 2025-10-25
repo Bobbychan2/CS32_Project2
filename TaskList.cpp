@@ -1,6 +1,11 @@
 #include "TaskList.h"
 #include <iostream>
 
+// ------------------------ Tracker Struct testing only------------------------ //
+
+int Tracker::created = 0;
+int Tracker::destroyed = 0;
+
 // ------------------------ C'tor, D'tor, AO, and CC ------------------------ //
 
 TaskList::TaskList() : head(nullptr), tail(nullptr), m_size(0) {}
@@ -32,7 +37,7 @@ int TaskList::size() const {
     return m_size; // TODO: Return actual size
 }
 
-void TaskList::addBack(const std::string& task) {
+void TaskList::addBack(const std::string& task) { // void TaskList::addBack(const std::string& task)
     Node* newNode = new Node(task);
     if (empty()) {
         head = tail = newNode;

@@ -1,8 +1,16 @@
 #ifndef TASKLIST_H
 #define TASKLIST_H
 
-#include <string>
 #include <iostream>
+
+// Tracker for memory leak testing
+
+struct Tracker {
+    static int created;
+    static int destroyed;
+    Tracker() { created++; }
+    ~Tracker() { destroyed++; }
+};
 
 class TaskList {
 public:
@@ -15,7 +23,7 @@ public:
     // Core functions
     bool empty() const;
     int size() const;
-    void addBack(const std::string& task);
+    void addBack(const std::string& task); // void addBack(const std::string& task);
     bool removeFront();
     bool get(int pos, std::string& task) const;
     int find(const std::string& task) const;
@@ -24,10 +32,10 @@ public:
 
 private:
     struct Node {
-        std::string data;
+        std::string data; //  std::string data;
         Node* prev;
         Node* next;
-        Node(const std::string& d) : data(d), prev(nullptr), next(nullptr) {}
+        Node(const std::string& d) : data(d), prev(nullptr), next(nullptr) {} // Node(const std::string& d) : data(d), prev(nullptr), next(nullptr) {}
     };
 
     Node* head;
@@ -40,4 +48,4 @@ private:
     Node* getNode(int pos) const;
 };
 
-#endif#pragma once
+#endif#pragma once 
