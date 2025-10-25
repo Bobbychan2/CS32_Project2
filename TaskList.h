@@ -48,4 +48,4 @@ private:
     Node* getNode(int pos) const;
 };
 
-#endif#pragma once 
+#endif // TASKLIST_H

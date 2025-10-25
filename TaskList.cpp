@@ -120,7 +120,7 @@ void TaskList::freeList() {
 }
 
 TaskList::Node* TaskList::getNode(int pos) const {
-    if (pos < 0 || pos >= m_size) return nullptr;
+    if (pos < 0 || pos >= m_size) return nullptr; // checks for out of bounds 
     Node* curr = head;
     for (int i = 0; i < pos; i++)
         curr = curr->next;

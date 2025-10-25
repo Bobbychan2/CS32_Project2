@@ -1,5 +1,6 @@
 #include "TaskList.h"
 #include <iostream>
+#include <cassert>
 #include <string>
 using namespace std;
 
